@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --ff-headin: 'Epilogue', sans-serif;
+  --ff-text:"open sans" , "sans-serif";
+  --hue:237;
+  --bg-primary: hsl(var(--hue), 22%, 20%);
+  --fc-primary:#fff;
+  --fc-secondary:#BBB3E6;
+  font-size: 62.5%;
+  --fs-heading: clamp(4rem,1rem + 5vw ,5.6rem);
+  --fs-heading-sm:clamp(3rem,0.5rem + 3vw ,4rem)
+  
+}
+
+body{
+  font-family: var(--ff-headin);
+  background-color: var(--bg-primary);
+  color: var(--fc-primary);
+}
+
+.page{
+  max-width: 33rem;
+  margin: auto;
+  padding: 5rem;
+}
+
+
+
+@media (min-width:700px){
+ 
+  
+  .page{
+    max-width: 117rem;
+   
+  }
+
+  main{
+   
+   
+    display: grid;
+    grid-template-areas: 'A B B' 'C C D' ;
+  }
+
+  main div:nth-child(1){
+    grid-area: A;
+  }
+  main div:nth-child(2)
+  {
+    grid-area: B;
+  }
+  main div:nth-child(3){
+    grid-area: C;
+  }
+  main div:nth-child(4){
+    grid-area: D;
+  }
+}
+
+
+
+
+img{
+  width: 100%;
+  transition-duration:   300ms ;
+  transition-timing-function: all ease-in;
+}
+
+img:hover{
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+
+
+
+header{
+  font-family: var(--ff-headin);
+  text-align: center;
+  margin-top: 10rem;
+  animation-name: topdown;
+  animation-duration: 1s;
+  
+}
+
+header p{
+  color: var(--fc-secondary);
+  text-transform: uppercase;
+  font-style: normal;
+  line-height: 3.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 1.7rem;
+}
+
+h1{
+  font-style: normal;
+  font-size: var(--fs-heading);
+  line-height: 4.8rem;
+  margin-bottom: 8rem;
+}
+
+main{
+  gap: 3rem;
+}
+
+
+
+.card{
+ position:  relative;
+ margin-bottom: 3rem;
+ 
+ 
+}
+  
+.card img{
+  height: 41.6rem;
+  object-fit: cover;
+  border-radius:5px;
+ 
+}
+
+.card h2{
+  position: absolute;
+  bottom: 5.2rem;
+  left: 2.8rem;
+  z-index: 1;
+  font-weight: 800;
+font-size: var(--fs-heading-sm);
+line-height: 4.8rem;
+}
+
+.card h2 span{
+  font-weight:400 ;
+  color: #090039;
+  padding: 5px 1.5rem;
+  background: #fff;
+  border-radius: 2rem;
+  text-align: center;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.3rem;
+  width: fit-content;
+}
+
+
+
+
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+}
+
+main{
+  animation: downtop  backwards;
+  animation-duration: 3s;
+  animation-delay: 500ms;
+  
+}
+
+@keyframes downtop{
+0%{
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+100%{
+  opacity: 1;
+  transform: translateY(0);
+}
+   
+}
+  
+  
+  
+  
+
